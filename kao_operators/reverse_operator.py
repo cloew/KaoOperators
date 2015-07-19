@@ -24,3 +24,6 @@ class ReverseOperator:
     def opFn(self):
         """ Return the base operations op function """
         return self.op.opFn
+        
+    def __repr__(self):
+        return self.method

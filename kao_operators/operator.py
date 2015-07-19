@@ -22,3 +22,6 @@ class Operator:
     def __call__(self, *args, **kwargs):
         """ Call this operator """
         return self.opFn(*args, **kwargs)
+        
+    def __repr__(self):
+        return self.method
