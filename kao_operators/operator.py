@@ -11,7 +11,6 @@ class Operator:
         
     def apply(self, cls, valueToUseFn):
         """ Apply the Operator to the given class """
-        print(self.builderFn)
         setattr(cls, self.method, self.builderFn(cls, self, valueToUseFn))
         if self.reverseOperator is not None:
             self.reverseOperator.apply(cls, valueToUseFn)
