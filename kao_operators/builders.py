@@ -1,3 +1,9 @@
+
+def GetOneParamOperatorMethod(cls, op, valueToUseFn):
+    """ Return the method to be used to run an opertaion """
+    def operator(self):
+        return op(valueToUseFn(self))
+    return operator
                  
 def GetTwoParamOperatorMethod(cls, op, valueToUseFn):
     """ Return the method to be used to run an opertaion """
