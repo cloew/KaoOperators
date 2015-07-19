@@ -11,7 +11,14 @@ def BuildOperatorWithReverse(method1, method2, opFn=None):
     op.requireReverseOperator(reverseOp)
     return op, reverseOp
     
-
+# Comparison Ops
+lt = Operator("__lt__", opFn=operator.lt, builderFn=GetTwoParamOperatorMethod)
+le = Operator("__le__", opFn=operator.le, builderFn=GetTwoParamOperatorMethod)
+eq = Operator("__eq__", opFn=operator.eq, builderFn=GetTwoParamOperatorMethod)
+ne = Operator("__ne__", opFn=operator.ne, builderFn=GetTwoParamOperatorMethod)
+gt = Operator("__gt__", opFn=operator.gt, builderFn=GetTwoParamOperatorMethod)
+ge = Operator("__ge__", opFn=operator.ge, builderFn=GetTwoParamOperatorMethod)
+    
 # Numeric Ops
 add, radd = BuildOperatorWithReverse("__add__", "__radd__", opFn=operator.add)
 sub, rsub = BuildOperatorWithReverse("__sub__", "__rsub__", opFn=operator.sub)
@@ -32,4 +39,5 @@ pos = Operator("__pos__", opFn=operator.pos, builderFn=GetOneParamOperatorMethod
 abs = Operator("__abs__", opFn=operator.abs, builderFn=GetOneParamOperatorMethod)
 invert = Operator("__invert__", opFn=operator.invert, builderFn=GetOneParamOperatorMethod)
 
+comparisonOps = [lt, le, eq, ne, gt, ge]
 numericOps = [add, sub, mul, truediv, floordiv, mod, divmod, pow, lshift, rshift, and_, xor, or_, neg, pos, abs, invert]
